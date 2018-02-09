@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var siButton: SIButton!
+    @IBOutlet weak var segment: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,17 +21,17 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func segmentValueChanged(sender: AnyObject) {
+    @IBAction func segmentValueChanged(_ sender: AnyObject) {
         let segment = sender as! UISegmentedControl
         if segment.selectedSegmentIndex == 0 {
-            siButton.setToCircle()
+            siButton.type = .circle
         }
         else
         {
-            siButton.setToSaqure()
+           siButton.type = .square
         }
     }
-    @IBAction func siTouchUpInside(sender: AnyObject) {
+    @IBAction func siTouchUpInside(_ sender: AnyObject) {
         print("Button Pressed")
     }
 
